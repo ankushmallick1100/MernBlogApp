@@ -1,7 +1,10 @@
+import HomePosts from "../components/HomePosts"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className="px-8 md:px-[200px]">
+      <HomePosts/>
+    </div>
   )
 }
 
