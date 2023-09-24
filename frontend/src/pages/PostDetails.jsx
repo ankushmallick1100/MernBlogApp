@@ -5,7 +5,7 @@ import Loader from "../components/Loader"
 import { BiEdit } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
 import { URL, IF } from "../url"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
@@ -15,6 +15,7 @@ const PostDetails = () => {
     const [post, setPost] = useState({})
     const [loader,setloader] = useState(false)
     const {user} = useContext(UserContext)
+    const navigate = useNavigate()
 
     const fetchPost = async () => {
         setloader(true)
@@ -26,6 +27,16 @@ const PostDetails = () => {
             console.log(err)
             setloader(true)
         }
+    }
+
+    const handleDeletePost = async () => {
+        try{
+            const res = await axios.delete(URL + "/api/posts/" + postId, {withCredentials:true})
+            // console.log(res.data)
+            navigate("/")
+        } catch (err) {
+            console.log(err)
+        }   
     }
 
     useEffect(() => {
@@ -41,8 +52,8 @@ const PostDetails = () => {
                     <h1 className="text-2xl font-bold text-black md:text-3xl">
                         {post.title} </h1>
                     {user?._id === post?.userId && <div className="flex items-center justify-center space-x-2">
-                        <p><BiEdit /></p>
-                        <p><MdDelete /></p>
+                        <p className="cursor-pointer"><BiEdit onClick={()=>{navigate("/edit/" + postId)}}/></p>
+                        <p className="cursor-pointer" onClick={handleDeletePost}><MdDelete /></p>
                     </div>}
                 </div>
 
