@@ -12,7 +12,7 @@ const verifyToken = (req,res,next)=>{
 
         // console.log("Passed")
 
-        req.userId = data.Id
+        req.userId = data._id
         next()
     })
 }

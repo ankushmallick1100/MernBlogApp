@@ -34,7 +34,7 @@ router.post("/login", async(req,res) => {
         if(!match){
             return res.status(401).json("Wrong Credentials!")
         }
-        const token = jwt.sign({id:user._id,username:user.username,email:user.email},process.env.SECRET,{expiresIn:"10d"})
+        const token = jwt.sign({_id:user._id,username:user.username,email:user.email},process.env.SECRET,{expiresIn:"10d"})
         const {password, ...info }  = user._doc
         res.cookie("token",token).status(200).json(info)
 
