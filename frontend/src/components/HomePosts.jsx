@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import {IF} from '../url'
 
 const HomePosts = ({post}) => {
   return (
@@ -6,7 +7,7 @@ const HomePosts = ({post}) => {
 
       {/* left */}
       <div className="w-[35%] height-[200px] flex justify-center items-center">
-        <img src={post.photo} alt="" className="h-full w-full object-cover" />
+        <img src={IF+post.photo} alt="" className="h-full w-full object-cover" />
       </div>
 
       {/* right */}

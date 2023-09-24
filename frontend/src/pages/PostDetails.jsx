@@ -4,7 +4,7 @@ import Comment from "../components/Comment"
 import Loader from "../components/Loader"
 import { BiEdit } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
-import { URL } from "../url"
+import { URL, IF } from "../url"
 import { useParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
@@ -54,7 +54,7 @@ const PostDetails = () => {
                     </div>
                 </div>
 
-                <img src={post.photo} alt="" className="w-full mx-auto mt-8" />
+                <img src={IF+post.photo} alt="" className="w-full mx-auto mt-8" />
                 <p className="mx-auto mt-8">
                     {post.desc}
                 </p>

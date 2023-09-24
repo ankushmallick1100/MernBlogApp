@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <>
-      <div className="mt-8 w-full bg-black px-8 md:px-[500px] py-8 flex md:flex-row flex-col items-start justify-between text-sm md:text-md space-y-4 md:space-y-0">
+      <div className="mt-8 w-full bg-black px-8 md:px-[300px] py-8 flex md:flex-row flex-col items-start justify-between text-sm md:text-md space-y-4 md:space-y-0">
         <div className="flex flex-col text-white">
           <p>Featured Blogs</p>
           <p>Most Viewed</p>
@@ -29,7 +29,7 @@ const Footer = () => {
           <p>LinkedIn</p>
         </div>
       </div>
-      <p className="py-2 pb-2 text-center text-white bg-black">All Rights Reserved @Blogopedia 2023</p>
+      <p className="py-2 pb-6 text-center text-white bg-black text-sm">All Rights Reserved @Blogopedia 2023</p>
     </>
   )
 }

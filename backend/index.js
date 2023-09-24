@@ -3,8 +3,9 @@ const app = express()
 const mongoose  = require('mongoose')
 const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser')
-const cors  =require('cors')
+const cors = require('cors')
 const multer = require('multer')
+const path = require('path')
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/users')
 const postRoute = require('./routes/posts')
@@ -30,6 +31,7 @@ app.use("/api/auth",authRoute)
 app.use("/api/users",userRoute)
 app.use("/api/posts",postRoute)
 app.use("/api/comments",commentRoute)
+app.use("/images",express.static(path.join(__dirname,"/images")))
 
 // Image upload
 const storage = multer.diskStorage({
@@ -44,6 +46,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 app.post("/api/upload", upload.single("file"), (req,res) => {
+    // console.log(req.body)
     res.status(200).json("Image has been uploaded successfully!")
 })
 
