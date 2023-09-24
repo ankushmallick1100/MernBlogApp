@@ -10,7 +10,6 @@ import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import axios from "axios"
 
-
 const PostDetails = () => {
     const postId = useParams().id
     const [post, setPost] = useState({})
