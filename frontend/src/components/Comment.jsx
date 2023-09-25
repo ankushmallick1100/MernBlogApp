@@ -15,11 +15,6 @@ const Comment = ({ c,post }) => {
         }
     }
 
-    // console.log(post.userId)
-    // console.log(user._id)
-    // console.log(user)
-    // console.log(post)
-
     return (
         <div className="px-2 py-2 bg-gray-200 rounded-lg my-2">
             <div className="flex items-center justify-between">

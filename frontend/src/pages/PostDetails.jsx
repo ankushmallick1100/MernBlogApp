@@ -62,8 +62,6 @@ const PostDetails = () => {
         e.preventDefault()
         try{
             const res = await axios.post(URL + "/api/comments/create", {comment:comment, author:user.username, postId:postId, userId:user._id}, {withCredentials:true})
-            // fetchPostComments()
-            // setComment("")
             window.location.reload(true)
         } catch (err) {
             console.log(err)

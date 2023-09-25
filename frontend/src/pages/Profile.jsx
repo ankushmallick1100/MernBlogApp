@@ -16,7 +16,6 @@ const Profile = () => {
     const {user,setUser} = useContext(UserContext)
     const params = useParams().id
     const navigate = useNavigate()
-    // console.log(user)
 
     const fetchProfile = async() => {
         try {
@@ -37,7 +36,6 @@ const Profile = () => {
         setUpdated(false)
         try{
             const res = await axios.put(URL + "/api/users/" + user._id, {username,email,password}, {withCredentials:true})
-            // console.log(res.data)
             setUpdated(true)
         } catch (err) {
             console.log(err)
@@ -49,7 +47,6 @@ const Profile = () => {
     const handleUserDelete = async() => {
         try{
             const res = await axios.delete(URL + "/api/users/" + user._id, {withCredentials:true})
-            // console.log(res.data)
             setUser(null)
             navigate("/")
         } catch (err) {
@@ -57,11 +54,9 @@ const Profile = () => {
         }
     }
 
-    // console.log(user)
     const fetchUserPosts = async() => {
         try{
             const res = await axios.get(URL + "/api/posts/user/" + user._id)
-            // console.log(res.data)
             setPosts(res.data)
         } catch (err) {
             console.log(err)

@@ -13,8 +13,6 @@ const CreatePost = () => {
     const [file, setFile] = useState('')
     const [cat, setCat] = useState('')
     const [cats, setCats] = useState([])
-    // console.log(file)
-
     const { user } = useContext(UserContext)
     const navigate = useNavigate()
 
@@ -47,24 +45,19 @@ const CreatePost = () => {
             data.append("img", filename)
             data.append("file", file)
             post.photo = filename
-            // console.log(data)
 
             // Img upload
             try {
                 const imgUpload = await axios.post(URL + "/api/upload", data)
-                // console.log(imgUpload.data)
             } catch (err) {
                 console.log(err)
             }
         }
 
-        // console.log(post)
-
         // Post upload
         try {
             const res = await axios.post(URL + "/api/posts/create", post, {withCredentials:true})
             navigate("/posts/post/" + res.data._id)
-            // console.log(res.data)
         } catch (err) {
             console.log(err)
         }

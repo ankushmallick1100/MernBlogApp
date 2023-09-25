@@ -47,24 +47,20 @@ const EditPost = () => {
             data.append("img", filename)
             data.append("file", file)
             post.photo = filename
-            // console.log(data)
 
             // Img upload
             try {
                 const imgUpload = await axios.post(URL + "/api/upload", data)
-                // console.log(imgUpload.data)
             } catch (err) {
                 console.log(err)
             }
         }
 
-        // console.log(post)
 
         // Post upload
         try {
             const res = await axios.put(URL + "/api/posts/" + postId, post, {withCredentials:true})
             navigate("/posts/post/" + res.data._id)
-            // console.log(res.data)
         } catch (err) {
             console.log(err)
         }
