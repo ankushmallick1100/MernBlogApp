@@ -1,7 +1,6 @@
-# Blog App
+# Blog Website
 <br>
-It is a MERN stack blog app where users can write and post their blogs and other users can comment on that blog post.
-<br>
-Technologies used: In the frontend, HTML, CSS (Tailwind CSS), and JavaScript (ReactJS) & in the backend, MongoDB, ExpressJS, and NodeJS. 
-<br>
-MongoDB Atlas is used for storing data.
+• This website is based on the MERN stack, where users can create and post their blogs so that other users can comment on that blog post. They can edit or delete their comments as well. <br>
+• A user can view their posted blog by navigating to their profiles, where they can also update their email and password. 
+• In Frontend, HTML, CSS - TailWind CSS framework and ReactJS JavaScript framework, and in the backend, NodeJS and ExpressJS are used to develop this website. <br>
+• MongoDB Atlas is used as a database for storing data in the cloud or retrieving it from the cloud. <br>
